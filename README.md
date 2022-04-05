@@ -12,6 +12,14 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+Perhaps change node version in .nvmrc file.
+
+Run :
+```sh
+nvm use
+```
+to force node version to use for the project.
+
 ```sh
 npm install
 ```
