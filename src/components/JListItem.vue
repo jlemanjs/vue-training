@@ -16,7 +16,7 @@ export default defineComponent({
 
 <template>
     <div>
-        <h3> {{ content }} </h3>
+        {{ content }} <button v-on:click="$emit('remove')">X</button>
     </div>
 </template>
 

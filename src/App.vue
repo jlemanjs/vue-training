@@ -5,12 +5,11 @@
   <div id="app">
     <header>
       <div class="wrapper">
-        <j-list-item content="coucou"/>
-        <j-list />
       </div>
     </header>
 
     <main>
+      <j-list />
     </main>
   </div>
 </template>
