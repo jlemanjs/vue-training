@@ -6,12 +6,19 @@ export default defineComponent({
   name: 'JList',
   data() {
     return {
-        nextId: 3,
         items: [
-            { text: 'a', id: '0' },
-            { text: 'b', id: '1' },
-            { text: 'c', id: '2' }
+            { text: 'a'},
+            { text: 'b'},
+            { text: 'c'}
         ]
+    }
+  },
+  methods: {
+    onRemove(id) {
+      this.items.splice(id, 1)
+    },
+    onAdd() {
+      this.items.push({text: 'nouveau ' + this.items.length})
     }
   }
 })
@@ -22,9 +29,9 @@ export default defineComponent({
   <div>
     <div> {{ items.length }} </div>
     <div>
-        <j-list-item v-for="(item, index) in items" v-on:remove="items.splice(index, 1)" :content="item.text" :key="item.id" />
+        <j-list-item v-for="(item, index) in items" @remove="onRemove(index)" :content="item.text" :key="index" />
     </div>
-    <button @click="items.push({text: 'nouveau ' + nextId, id: nextId++})">Nouveau</button>
+    <button @click="onAdd()">Nouveau</button>
   </div>
 </template>
 
